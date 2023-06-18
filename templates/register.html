@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>プロフィール登録</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/register" method="POST">
+                            <div class="form-group">
+                                <label>名前</label>
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label>年齢</label>
+                                <input type="number" class="form-control" name="age">
+                            </div>
+                            <div class="form-group">
+                                <label>性別</label>
+                                <select class="form-control" name="gender">
+                                    <option value="男性">男性</option>
+                                    <option value="女性">女性</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>趣味</label>
+                                <input type="text" class="form-control" name="hobby">
+                            </div>
+                            <div class="form-group">
+                                <label>好きな食べ物</label>
+                                <input type="text" class="form-control" name="food">
+                            </div>
+                            <div class="form-group">
+                                <label>お酒</label>
+                                <select class="form-control" name="alcohol">
+                                    <option value="よく飲む">よく飲む</option>
+                                    <option value="たまに飲む">たまに飲む</option>
+                                    <option value="飲まない">飲まない</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>性格</label>
+                                <input type="text" class="form-control" name="personality">
+                            </div>
+                            <div class="form-group">
+                                <label>仕事</label>
+                                <input type="text" class="form-control" name="job">
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="登録">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

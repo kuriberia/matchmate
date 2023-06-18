@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>プロフィール設定</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <h2>プロフィール設定</h2>
+                {% if profile %}
+                    <p>現在設定されているプロフィール:</p>
+                    <p>名前: {{ profile.name }}</p>
+                    <p>年齢: {{ profile.age }}</p>
+                    <p>性別: {{ profile.gender }}</p>
+                    <p>趣味: {{ profile.hobby }}</p>
+                    <p>好きな食べ物: {{ profile.food }}</p>
+                    <p>お酒: {{ profile.alcohol }}</p>
+                    <p>性格: {{ profile.personality }}</p>
+                    <p>仕事: {{ profile.job }}</p>
+                    <form action="/chat" method="GET">
+                        <input type="submit" class="btn btn-primary" value="チャットへ進む">
+                {% else %}
+                    <form action="/profile" method="POST">
+                        <!-- フォームの各項目を入力するコード -->
+                        <input type="submit" class="btn btn-primary" value="プロフィール設定">
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
