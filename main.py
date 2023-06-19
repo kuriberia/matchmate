@@ -92,5 +92,12 @@ def reset():
     # 直前のメッセージを削除する
     session['message_history'] = session['message_history'][:-2]
     return redirect('/chat')
+
+@app.route('/clear', methods=['GET'])
+def clear():
+    # チャットをリセットする
+    session['message_history'] = session['message_history'][:1]
+    return redirect('/chat')
+
 if __name__ == '__main__':
     app.run(debug=True)
