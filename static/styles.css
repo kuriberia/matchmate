@@ -14,11 +14,3 @@
 .assistant-message {
     border: 1px solid #6c757d;
 }
-
-.user-message p {
-    text-align: right;
-}
-
-.assistant-message p {
-    text-align: left;
-}
