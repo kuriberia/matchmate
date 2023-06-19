@@ -87,5 +87,10 @@ def chat():
     return render_template('chat.html', message_history=session['message_history'], user_has_started_chat=user_has_started_chat)
 
 
+@app.route('/reset', methods=['GET'])
+def reset():
+    # 直前のメッセージを削除する
+    session['message_history'] = session['message_history'][:-2]
+    return redirect('/chat')
 if __name__ == '__main__':
     app.run(debug=True)
